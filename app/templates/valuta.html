@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Seneste Valutakurser{% endblock %}
+
+{% block content %}
+	<section id="valutakurser">
+		<div class="box">
+			<img src="{{ url_for('static', filename='us_flag.png') }}">
+			<h4 class="item">
+				USD<br>
+				{{ valuta.USD }}
+			</h4>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='dk_flag.png') }}">
+			<h4 class="item">
+				DKK<br>
+				{{ valuta.DKK }}
+			</h4>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='norge_flag.png') }}">
+			<h4 class="item">
+				NOK<br>
+				{{ valuta.NOK }}
+			</h4>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='uk_flag.png') }}">
+			<h4 class="item">
+				GBP<br>
+				{{ valuta.GBP }}
+			</h4>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='australien_flag.png') }}">
+			<h4 class="item">
+				AUD<br>
+				{{ valuta.AUD }}
+			</h4>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='island_flag.png') }}">
+			<h4 class="item">
+				ISK<br>
+				{{ valuta.ISK }}
+			</h4>
+		</div>
+	</section>
+{% endblock %}

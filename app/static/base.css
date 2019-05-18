@@ -1,0 +1,151 @@
+html, section, nav, #navbar {
+  background: white;
+}
+
+section {
+  padding-top: 40px;
+}
+
+#navbar {
+  padding: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-item {
+  font-size: 50px;
+}
+.nav-item:hover {
+  filter: brightness(110%);
+}
+
+.vejr {
+  color: lightgreen;
+}
+
+.valuta {
+  color: #f7aa51;
+}
+
+.nyheder {
+  color: lightcoral;
+}
+
+#konto-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.konto {
+  margin: auto;
+  padding: 10px;
+  width: 125px;
+  font-size: 25px;
+  background: coral;
+  text-align: center;
+  -moz-border-radius: 5%;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+}
+.konto a {
+  text-decoration: none;
+  color: white;
+}
+.konto:hover {
+  background: #ffa483;
+}
+
+.box {
+  max-width: 80vw;
+  background: #f0f1f3;
+  font-size: 1.5em;
+  padding: 40px;
+  margin: 10px 0;
+  border: 1px solid #dedfe3;
+  margin: auto;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.07);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.box a {
+  color: #9da3af;
+  text-decoration: none;
+}
+.box a:hover {
+  color: #b9bdc6;
+}
+
+img {
+  margin: auto;
+  margin-left: 10px;
+  max-height: 48px;
+  max-width: 48px;
+}
+
+.item {
+  margin: auto;
+  margin-left: 40px;
+}
+
+#by-form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+#by-input {
+  font-size: 40px;
+  padding: 10px;
+  color: darkgrey;
+  margin: auto;
+  margin-bottom: 40px;
+  border: 1px solid #dedfe3;
+  max-width: 50vw;
+  -webkit-box-shadow: 0 2px 4px #333;
+  -moz-box-shadow: 0 2px 4px #333;
+  box-shadow: 0 2px 4px #333;
+}
+
+#empty {
+  color: #9da3af;
+  font-size: 1.5em;
+}
+
+#message-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+}
+
+.message {
+  margin: auto;
+  height: 50px;
+  font-size: 1.5em;
+  color: darkgrey;
+}
+
+@media only screen and (min-width: 350px) {
+  .nav-item {
+    font-size: 70px;
+  }
+}
+
+/*# sourceMappingURL=base.css.map */

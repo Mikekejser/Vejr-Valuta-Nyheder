@@ -1,0 +1,156 @@
+@import "colors.scss";
+
+@mixin display-flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin border-radius($procent) {
+	-moz-border-radius: $procent;
+	-webkit-border-radius: $procent;
+	border-radius: $procent;
+}
+
+@mixin box-shadow($properties) {
+	-webkit-box-shadow: $properties;
+	-moz-box-shadow: $properties;
+	box-shadow: $properties;
+}
+
+
+html, section, nav, #navbar {
+	background: white;
+}
+
+section {
+	padding-top: 40px;
+}
+#navbar {
+	padding: 40px;
+	
+	@include display-flex;
+	justify-content: space-around;
+}
+
+.nav-item {
+	font-size: 50px;
+
+	&:hover {
+		filter: brightness(110%);
+	}
+}
+
+.vejr {
+	color: $vejr;
+}
+
+.valuta {
+	color: $valuta;
+}
+
+.nyheder {
+	color: $nyheder;
+}
+
+#konto-wrapper {
+	text-align: center;
+	margin-top: 40px;
+}
+.konto {
+	margin: auto;
+	padding: 10px;
+	width: 125px;
+	font-size: 25px;
+	background: $konto;
+	text-align: center;
+
+	@include border-radius(5%);
+
+	a {
+	text-decoration: none;
+	color: white;
+	}
+
+	&:hover {
+	background: lighten($konto, 10%);
+	}
+}
+
+.box {
+	
+	a {
+		color: $link-color;
+		text-decoration: none;
+
+		&:hover {
+		color: lighten($link-color, 10%)
+		}
+	}
+	
+	max-width: 80vw;
+	background: $box;
+	font-size: 1.5em;
+	padding: 40px;
+	margin: 10px 0;
+	border: 1px solid #dedfe3;
+	margin: auto;
+	margin-bottom: 10px;
+	
+	@include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.07));
+	@include display-flex;
+	@include border-radius(4px);
+}
+
+
+img {
+	margin: auto;
+	margin-left: 10px;
+	max-height: 48px;
+	max-width: 48px;
+}
+
+.item {
+	margin: auto;
+	margin-left: 40px;
+}
+
+#by-form {
+	@include display-flex;
+}
+
+#by-input {
+	font-size: 40px;
+	padding: 10px;
+	color: darkgrey;
+	margin: auto;
+	margin-bottom: 40px;
+	border: 1px solid #dedfe3;
+	max-width: 50vw;
+
+	@include box-shadow(0 2px 4px #333);
+}
+
+#empty {
+	color: #9da3af;
+	font-size: 1.5em;
+}
+
+#message-container {
+	@include display-flex;
+	text-align: center;
+}
+.message {
+	margin: auto;
+	height: 50px;
+	font-size: 1.5em;
+	color: white;
+}
+
+@media only screen and (min-width: 350px) {
+	.nav-item {
+		font-size: 70px;
+	}
+}

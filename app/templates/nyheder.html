@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Dagens Overskrifter{% endblock %}
+
+{% block content %}
+	<section id="nyheder">
+		{% for nyhed in nyheder %}
+			<div class="box">
+				<img src="{{ nyhed.logo }}">
+				<h4 class="item">
+					<a href="{{ nyhed.url }}">{{ nyhed.overskrift }}</a>
+				</h4>
+			</div>
+		{% endfor %}
+	</section>
+{% endblock %}

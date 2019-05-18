@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Vejret Lige Nu{% endblock %}
+	
+
+{% block content %}
+	<section id="byer">
+		<form method="post" id="by-form">
+			<input id="by-input" type="text" name="by" placeholder="Indtast By..." autofocus>
+		</form>
+		{% if vejr_data %}
+      		{% if current_user.is_anonymous %}
+  				<div class="box">
+  					<img src="http://openweathermap.org/img/w/{{ vejr_data.billede }}.png" alt="">
+  					<h4 class="item">
+  						{{ vejr_data.by }} - 
+  						{{ vejr_data.temperatur }} &#8451;<br>
+  						{{ vejr_data.beskrivelse }}<br>
+  					</h4>
+  				</div>
+			{% else %}
+				{% for vejr in vejr_data %}
+					<div class="box">
+						<img src="http://openweathermap.org/img/w/{{ vejr.billede }}.png" alt="">
+						<h4 class="item">
+							{{ vejr.by }} - 
+							{{ vejr.temperatur }} &#8451;<br>
+							{{ vejr.beskrivelse }}<br>
+							<a href="{{ url_for('slet', navn=vejr.by) }}">Slet</a>
+						</h4>
+					</div>
+				{% endfor %}
+			{% endif %}
+		{% else %}
+			<center><em id="empty">Tilføj en by i feltet ovenfor.</em></center>
+		{% endif %}
+	</section>
+{% endblock %}
+
+{% block js %}
+	<script>
+		let form = document.getElementById("by-form");
+		form.onkeydown = function(e) {
+			if (e.keyCode == 13) {
+				form.submit();
+			}
+		};
+	</script>
+{% endblock %}

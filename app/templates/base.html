@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='base.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+  <div id="navbar">
+    <a title="-Vejret lige nu" href="{{ url_for( 'vejr' ) }}"><i class="fas fa-cloud-sun nav-item vejr"></i></a>
+    <a title="Seneste valutakurser" href="{{ url_for( 'valuta' ) }}"><i class="fas fa-dollar-sign nav-item valuta"></i></a>
+    <a title="Seneste nyheder" href="{{ url_for( 'nyheder' ) }}"><i class="far fa-newspaper nav-item nyheder"></i></a>
+  </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div id="message-container">
+        {% for message in messages %}
+          <div class="message">
+            <b><em>{{ message }}</em></b>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+  {% if current_user.is_anonymous %}
+    <div id="konto-wrapper">
+      <span class="konto"><a href="{{ url_for( 'login' ) }}"><b>Log ind</b></a></span>
+      <span class="konto"><a href="{{ url_for( 'opret' ) }}"><b>Opret</b></a></span>
+    </div>
+  {% else %}
+    <div class="konto"><a href="{{ url_for( 'logout' ) }}"><b>Log ud</b></a></div>
+  {% endif %}
+  <br>
+  
+
+  {% block js %}{% endblock %}
+</body>
+</html>

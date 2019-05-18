@@ -1,0 +1,5 @@
+.env
+app.db
+ideas.txt
+logs/
+migrations/
